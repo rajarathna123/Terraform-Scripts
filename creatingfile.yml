@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: no
+  become: true
+  tasks:
+  - name: Create a new file with permissions
+    file:
+      path: "/opt/aatmania1.txt"
+      state: touch
+      owner: root
+      group: root
+      mode: 0755
