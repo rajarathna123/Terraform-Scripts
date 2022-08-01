@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+    - name: create users
+      user:
+        name: "{{item}}"
+        groups: ansible
+        state: present
+      with_items:
+        - user1
+        - user2
